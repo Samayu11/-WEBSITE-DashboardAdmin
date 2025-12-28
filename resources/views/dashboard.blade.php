@@ -12,11 +12,12 @@
             </div>
             <div class="Tagihan w-[250px] h-[200px] bg-[#90BE6D] rounded-[20px] flex flex-col justify-around items-center text-white font-bold text-shadow-xs">
                 <h1>Total Kelas</h1>
-                <h1 class="text-[5rem]" id="cGuru">{{$totalGuru}}</h1>
+                <h1 class="text-[5rem]" id="cKelas">{{$totalGuru}}</h1>
             </div>
 
             <div class="Pemasukan w-[250px] h-[200px] bg-[#577590] rounded-[20px] flex flex-col justify-around items-center text-white font-bold text-shadow-xs">
-                Guru
+                <h1>Total Guru</h1>
+                <h1 class="text-[5rem]" id="cGuru">{{$totalGuru}}</h1>
             </div>
             
         </div>

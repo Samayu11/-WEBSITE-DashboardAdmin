@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','dashboard')
+@section('title','tambah-murid')
 
 @section('content')
         <div class="tambahMurid w-[900px] h-screen  flex justify-center items-center">

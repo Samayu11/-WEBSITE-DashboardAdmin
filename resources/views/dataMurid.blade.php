@@ -24,8 +24,10 @@
                     </a>
                 </th>
                 <th class="border-[1px] border-[#E7EBF0] flex"> 
-                    <input type="text" class="w-30 h-10" placeholder="Cari Murid" id="searchbar">
-                    <button class="w-10 rounded-full bg-[#4c8af5]"><i class="fa-solid fa-search text-white"></i></button>
+                    <form action="/datamurid" method="get" class="flex">
+                        <input type="text" name="pencarian" class="w-30 h-10" placeholder="Cari Murid" id="searchbar">
+                        <button type="submit" class="w-10 rounded-full bg-[#4c8af5]"><i class="fa-solid fa-search text-white"></i></button>
+                    </form>
                 </th>
             </tr>
 

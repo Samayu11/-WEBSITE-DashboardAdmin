@@ -9,14 +9,14 @@
         <table >
             <tr>
                 <th class="w-10 border-[1px] border-[#E7EBF0] bg-[#4c8af5] text-white">No</th>
-             
+            
                 <th class="w-40 border-[1px] border-[#E7EBF0] bg-[#4c8af5] text-white">Nama Kelas</th>
-               
+        
                 <th class="w-20 border-[1px] border-[#E7EBF0] bg-[#4c8af5] text-white">Wali Kelas</th>
 
                 <th class="w-50 border-[1px] border-[#E7EBF0] bg-[#4c8af5] text-white">Action</th>
                 <th class="w-20 rounded-[8px]  bg-[#577590] hover:bg-[#38a2ff] ">
-                    <a href="/tambahMurid" class="text-white text-3xl font-bold  ">
+                    <a href="/tambahkelas" class="text-white text-3xl font-bold  ">
                         <div>
                             <button >
                                 +
@@ -25,8 +25,10 @@
                     </a>
                 </th>
                 <th class="border-[1px] border-[#E7EBF0] flex"> 
-                    <input type="text" class="w-30 h-10" placeholder="Cari Kelas" id="searchbar">
-                    <button class="w-10 rounded-full bg-[#4c8af5]"><i class="fa-solid fa-search text-white"></i></button>
+                    <form action="/datakelas" method="get">
+                        <input type="text" name="pencariankelas" class="w-30 h-10" placeholder="Cari Kelas" id="searchbar">
+                        <button type="submit" class="w-10 h-full rounded-full bg-[#4c8af5]"><i class="fa-solid fa-search text-white"></i></button>     
+                    </form>                  
                 </th>
             </tr>
 
@@ -39,9 +41,17 @@
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$i ++}}</td>
                     <td class="w-20 border-[1px] text-center border-[#E7EBF0]">{{$Kelas->nama_kelas}}</td>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$Kelas->wali_kelas}}</td>
-                    <td class="w-10 border-[1px] text-center border-[#E7EBF0]">
-                        <button class="bg-[#90BE6D] p-1 rounded-[8px] w-[50px] m-2 font-bold text-white">Edit</button>
-                        <button class="bg-red-500 p-1 rounded-[8px] w-[60px] m-2 font-bold text-white">Hapus</button>
+                    <td class="w-10 border-[1px] flex text-center border-[#E7EBF0]">
+                        <a href="/editkelas/{{$Kelas->id}}/{{$Kelas->nama_kelas}}/{{$Kelas->wali_kelas}}">
+                            <button class="bg-[#90BE6D] p-1 rounded-[8px] w-[50px] m-2 font-bold text-white">Edit</button>
+                        </a>
+                        
+                        <form action="/datakelas/{{$Kelas->id}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="bg-red-500 p-1 rounded-[8px] w-[60px] m-2 font-bold text-white">Hapus</button>
+                        </form>
+                        
                     </td>
                 </tr>
             @endforeach

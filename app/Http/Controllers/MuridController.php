@@ -12,6 +12,12 @@ class MuridController extends Controller
         return view('datamurid', ['tampilMurid' => $tampilMurid]);
     }
 
+    public function pencarian(Request $request){
+        $katakunci = $request->input('pencarian');
+        $tampilMurid = DB::table('students')->where('nis', 'like', "%$katakunci%")->orWhere('nama_lengkap', 'like', "%$katakunci%")->orWhere('nama_orangtua', 'like', "%$katakunci%")->orWhere('status', 'like', "%$katakunci%")->get();
+        return view('datamurid', ['tampilMurid' => $tampilMurid]);
+    }
+
     public function halamanTambah(){
         return view('tambahMurid');
     }
