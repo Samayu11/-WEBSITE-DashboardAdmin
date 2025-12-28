@@ -44,8 +44,8 @@ class MuridController extends Controller
         return redirect('datamurid');
     }
 
-    public function editPage($nis){
-        return view('editmurid', compact('nis'));
+    public function editPage($nis,$nama_lengkap,$jenis_kelamin,$tanggal_lahir,$alamat,$nama_orangtua,$kontak_orangtua,$tahun_masuk,$kelas_id,$status){
+        return view('editmurid', compact('nis','nama_lengkap', 'jenis_kelamin','tanggal_lahir','alamat','nama_orangtua', 'kontak_orangtua', 'tahun_masuk', 'kelas_id', 'status'));
     }
 
     public function editMurid(Request $request, $nis){

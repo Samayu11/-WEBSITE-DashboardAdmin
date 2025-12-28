@@ -12,7 +12,7 @@ Route::view('/dashboard', 'dashboard')->middleware('auth');
 Route::get('/dashboard',[dashboardController::class,'murid']);
 
 Route::get('/datamurid',[MuridController::class, 'tampilData']);
-Route::get('/editmurid/{nis}', [MuridController::class, 'editPage']);
+Route::get('/editmurid/{nis}/{nama_lengkap}/{jenis_kelamin}/{tanggal_lahir}/{alamat}/{nama_orangtua}/{kontak_orangtua}/{tahun_masuk}/{kelas_id}/{status}', [MuridController::class, 'editPage']);
 Route::put('/datamurid/{nis}', [MuridController::class, 'editMurid']);
 Route::delete('/datamurid/{nis}', [MuridController::class, 'hapusMurid']);
 Route::get('/tambahMurid',[MuridController::class, 'halamanTambah']);
