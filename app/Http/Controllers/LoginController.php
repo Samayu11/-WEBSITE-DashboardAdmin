@@ -17,9 +17,10 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if(Auth::attempt($credential)){
-            $request->session()->regenerate();
+        $rememberme = $request->filled('rememberme');
 
+        if(Auth::attempt($credential, $rememberme)){
+            $request->session()->regenerate();
             return redirect()->intended('dashboard');
         }
         return back()->withErrors([

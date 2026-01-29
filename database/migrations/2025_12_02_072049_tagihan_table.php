@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('tagihan', function (Blueprint $table) {
             $table->id(); // id INT AUTO_INCREMENT PRIMARY KEY
             $table->foreignId('student_id')
-                  ->constrained('students')
-                  ->onUpdate('cascade')
-                  ->onDelete('cascade'); // FOREIGN KEY ke students
+                ->constrained('students')
+                ->onUpdate('cascade')
+                ->onDelete('cascade'); // FOREIGN KEY ke students
+            $table->string('students', 100);
             $table->year('tahun'); // YEAR NOT NULL
             $table->tinyInteger('bulan')->nullable(); // TINYINT NULL
-            $table->decimal('jumlah', 12, 2); // DECIMAL(12,2)
+            $table->decimal('SPP', 12, 2); // DECIMAL(12,2)
+            $table->decimal('Total', 12, 2)
+                ->storedAs('SPP * bulan');
             $table->enum('status', ['belum bayar','lunas','sebagian'])->default('belum bayar');
             $table->date('tanggal_jatuh_tempo');
             $table->date('tanggal_bayar')->nullable();

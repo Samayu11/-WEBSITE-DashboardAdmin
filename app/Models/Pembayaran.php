@@ -14,7 +14,10 @@ class pembayaran extends Model
     protected $fillable = [
         'tagihan_id',
         'student_id',
+        'student',
+        'total_tagihan',
         'jumlah_bayar',
+        'total',
         'tanggal_bayar',
         'metode'];
 }

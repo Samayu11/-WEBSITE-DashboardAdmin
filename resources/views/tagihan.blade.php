@@ -31,7 +31,7 @@
             @foreach ($tagihans as $tagihan)
                 <tr>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$i ++}}</td>
-                    <td class="w-20 border-[1px] text-center border-[#E7EBF0]">{{$tagihan->student}}</td>
+                    <td class="w-20 border-[1px] text-center border-[#E7EBF0]">{{$tagihan->students}}</td>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$tagihan->bulan}}</td>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$tagihan->Total}}</td>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$tagihan->tanggal_bayar}}</td>

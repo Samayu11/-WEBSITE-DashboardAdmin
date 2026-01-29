@@ -22,7 +22,7 @@ class TagihanController extends Controller
 
     public function search(Request $request){
         $keyword = $request->input('pencarianMurid');
-        $tagihans = DB::table('tagihan')->where('student', 'like', "%$keyword%")->get();
+        $tagihans = DB::table('tagihan')->where('students', 'like', "%$keyword%")->get();
         return view('tagihan', compact('tagihans'));
     }
 }
