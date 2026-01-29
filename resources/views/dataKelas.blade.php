@@ -41,7 +41,7 @@
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$i ++}}</td>
                     <td class="w-20 border-[1px] text-center border-[#E7EBF0]">{{$Kelas->nama_kelas}}</td>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$Kelas->wali_kelas}}</td>
-                    <td class="w-10 border-[1px] flex text-center border-[#E7EBF0]">
+                    <td class="w-50 border-[1px] flex justify-around border-[#E7EBF0]">
                         <a href="/editkelas/{{$Kelas->id}}/{{$Kelas->nama_kelas}}/{{$Kelas->wali_kelas}}">
                             <button class="bg-[#90BE6D] p-1 rounded-[8px] w-[50px] m-2 font-bold text-white">Edit</button>
                         </a>

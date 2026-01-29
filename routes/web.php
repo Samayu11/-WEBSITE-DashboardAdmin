@@ -3,9 +3,12 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MuridController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\dataKelasController;
+use App\Http\Controllers\TagihanController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\pengaturanController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[LoginController::class, 'index']);
+Route::get('/login',[LoginController::class, 'index']);
 Route::post('/login',[LoginController::class,'authenticate']);
 
 Route::view('/dashboard', 'dashboard')->middleware('auth');
@@ -28,3 +31,14 @@ Route::get('/tambahkelas', [dataKelasController::class, 'halamanTambahKelas']);
 Route::post('/tambahkelas', [dataKelasController::class, 'tambahKelas']);
 // Route::view('/layout', 'layout');
 
+Route::get('/tagihan', [TagihanController::class,'index']);
+Route::get('/tagihan',[TagihanController::class, 'tampilTagihan']);
+Route::put('/tagihan/{id}', [TagihanController::class, 'updateStatus']);
+Route::get('/tagihan', [TagihanController::class, 'search']);
+
+Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran', [PembayaranController::class, 'tampilPembayaran']);
+Route::get('/pembayaran', [PembayaranController::class, 'searchup']);
+
+Route::get('/pengaturan', [pengaturanController::class, 'index']);
+Route::put('/pengaturan/upload', [pengaturanController::class, 'upload'])->middleware('auth');

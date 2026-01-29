@@ -22,7 +22,7 @@ class LoginController extends Controller
 
             return redirect()->intended('dashboard');
         }
-         return back()->withErrors([
+        return back()->withErrors([
             'username' => 'yang anda inputkan salah/tidak terdaftar',
         ])->onlyInput('username');
     }

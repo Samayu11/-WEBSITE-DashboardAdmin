@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         @vite('resources/css/style.css')
         @vite('resources/js/chart.js')
+        @vite('resources/js/script.js')
 </head>
 <body class="bg-[#FAFAFF] flex ">
     <nav class="w-[250px] h-[1100px] bg-[#4C8BF5] flex flex-col justify-start items-center gap-8 p-4">
@@ -32,11 +33,9 @@
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/datamurid">Data Murid</a></li>
                 <li><a href="/datakelas">Data Kelas</a></li>
-                <li><a href="">Tagihan</a></li>
-                <li><a href="">Pembayaran</a></li>
-                <li><a href="">Laporan</a></li>
-                <li><a href="">Manajemen User</a></li>
-                <li><a href="">Pengaturan</a></li>
+                <li><a href="/tagihan">Tagihan</a></li>
+                <li><a href="/pembayaran">Pembayaran</a></li>
+                <li><a href="/pengaturan">Pengaturan</a></li>
                 <li><a href="">Log Out</a></li>
             </ul>
         </div>

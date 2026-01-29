@@ -42,7 +42,7 @@
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$Murid->nama_lengkap}}</td>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$Murid->nama_orangtua}}</td>
                     <td class="w-10 border-[1px] text-center border-[#E7EBF0]">{{$Murid->status}}</td>
-                    <td class="w-10 border-[1px] flex text-center border-[#E7EBF0]">
+                    <td class="w-50 border-[1px] flex justify-around items-center border-[#E7EBF0]">
                         <a href="/editmurid/{{$Murid->nis}}/{{$Murid->nama_lengkap}}/{{$Murid->jenis_kelamin}}/{{$Murid->tanggal_lahir}}/{{$Murid->alamat}}/{{$Murid->nama_orangtua}}/{{$Murid->kontak_orangtua}}/{{$Murid->tahun_masuk}}/{{$Murid->kelas_id}}/{{$Murid->status}}">
                             <button class="bg-[#90BE6D] p-1 rounded-[8px] w-[50px] m-2 font-bold text-white">Edit</button>
                         </a>
