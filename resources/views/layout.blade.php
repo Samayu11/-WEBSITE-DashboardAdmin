@@ -36,7 +36,7 @@
                 <li><a href="/tagihan">Tagihan</a></li>
                 <li><a href="/pembayaran">Pembayaran</a></li>
                 <li><a href="/pengaturan">Pengaturan</a></li>
-                <li><a href="">Log Out</a></li>
+                <li><a href="/logout">Log Out</a></li>
             </ul>
         </div>
     </nav>
