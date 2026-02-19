@@ -23,20 +23,25 @@
         @vite('resources/js/script.js')
 </head>
 <body class="bg-[#FAFAFF] flex ">
-    <nav class="w-[250px] h-[1100px] bg-[#4C8BF5] flex flex-col justify-start items-center gap-8 p-4">
+    <nav class="w-[250px] h-[1100px] bg-[#47578b] flex flex-col justify-start items-center gap-8 p-4">
         <div class="profile-pict w-[100px] h-[100px] rounded-full bg-gray-400">
+            <img src="{{ asset('assets/' . auth()->user()->foto) }}" alt="logo" class=" border-2 border-white w-[100px] h-[100px] rounded-full">
+        </div>
 
+        <div class="profileInf text-center text-white">
+            <h2 class="text-2xl font-bold">{{auth()->user()->username}}</h2>
+            <p>{{auth()->user()->email}}</p>
         </div>
 
         <div class="menuWrapper w-[200px] h-[400px]  flex flex-col justify-center items-center">
-            <ul class="flex flex-col justify-center items-center gap-5 font-bold text-white text-[15px]">
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/datamurid">Data Murid</a></li>
-                <li><a href="/datakelas">Data Kelas</a></li>
-                <li><a href="/tagihan">Tagihan</a></li>
-                <li><a href="/pembayaran">Pembayaran</a></li>
-                <li><a href="/pengaturan">Pengaturan</a></li>
-                <li><a href="/logout">Log Out</a></li>
+            <ul class="flex flex-col justify-center items-start gap-5 font-bold text-white text-[15px]">
+                <li class="{{request()->is('dashboard') ? 'rounded-s-full p-1 bg-white text-black' : ''}} w-[230px] ml-5" ><a href="/dashboard"><i class="fa-solid fa-chart-pie mr-1"></i> Dashboard</a></li>
+                <li class="{{request()->is('datamurid') ? 'rounded-s-full p-1 bg-white text-black' : ''}} w-[230px] ml-5"><a href="/datamurid"><i class="fa-solid fa-users mr-1"></i> Data Murid</a></li>
+                <li class="{{request()->is('datakelas') ? 'rounded-s-full p-1 bg-white text-black' : ''}} w-[230px] ml-5"><a href="/datakelas"><i class="fa-solid fa-diagram-project mr-1"></i> Data Kelas</a></li>
+                <li class="{{request()->is('tagihan') ? 'rounded-s-full p-1 bg-white text-black' : ''}} w-[230px] ml-5"><a href="/tagihan"><i class="fa-solid fa-receipt mr-1"></i> Tagihan</a></li>
+                <li class="{{request()->is('pembayaran') ? 'rounded-s-full p-1 bg-white text-black' : ''}} w-[230px] ml-5"><a href="/pembayaran"><i class="fa-solid fa-wallet mr-1"></i> Pembayaran</a></li>
+                <li class="{{request()->is('pengaturan') ? 'rounded-s-full p-1 bg-white text-black' : ''}} w-[230px] ml-5"><a href="/pengaturan"><i class="fa-solid fa-gear mr-1"></i> Pengaturan</a></li>
+                <li class="w-[230px] ml-5 mt-[40px]"><a href="/logout"><i class="fa-solid fa-right-from-bracket mr-1"></i> Log Out</a></li>
             </ul>
         </div>
     </nav>
@@ -47,5 +52,6 @@
         </footer>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </body>
 </html>

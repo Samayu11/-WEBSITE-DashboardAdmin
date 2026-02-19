@@ -4,25 +4,43 @@
 
 @section('content')
     <div class="contentWrapper ml-12 w-full h-screen ">
-        <h1 class="underline font-bold text-[25px] pt-[10PX] mb-10">PENGATURAN</h1>
+        <h1 class=" font-bold text-[25px] pt-[10PX] mb-10">PENGATURAN</h1>
 
         <div class="profileSection">
-            <div class="profile w-[900px] h-[200px] rounded-2xl bg-[#4c8bf5] p-2 flex items-center ">
-                <form action="/pengaturan/upload" method="post" enctype="multipart/form-data" class="profileIm w-[150px] h-[150px]  flex items-end relative">
-                    @csrf
-                    @method('PUT')
-                    <img src="{{ asset('assets/' . auth()->user()->foto) }}" alt="logo" class="w-[150px] h-[150px]">
-                    <input type="file" name="foto" id="foto" class="text-[12px] absolute bg-amber-300 w-[140px]">
-                    <button type="submit" class="absolute z-10 bg-green-500 w-[80px] right-0 text-[12px]">Upload</button>
-                </form>
-
-            <div class="">
-                <h2 class="text-white text-[25px] font-bold capitalize ml-2">{{auth()->user()->username}}</h2>
-                <div class="ml-2 flex text-white w-[400px] justify-between">
-                    <p>email : {{auth()->user()->email}}</p>
-                    <p>contact : {{auth()->user()->no_telp}}</p>
+            <div class="profile w-[900px] h-[300px] rounded-2xl bg-[#f4f4f3] p-4  flex items-start border border-[#342d2d] shadow-2xl">
+                <div>
+                    <img src="{{ asset('assets/' . auth()->user()->foto) }}" alt="logo" class="w-[250px] h-[250px] rounded-[20px]">
                 </div>
-            </div>
+                
+
+                <div class=" w-[500px] h-[200px] flex flex-col justify-center items-center  text-[#818061]">
+                    <div class="w-[320px] text-start">
+                        <h2 class=" text-[25px] font-bold capitalize ">{{auth()->user()->username}}</h2>
+                    </div>
+                    
+
+
+                    <div class=" flex flex-col gap-2">
+                        <div class="w-[320px] border border-[#342d2d] rounded-full p-2"><p>email : {{auth()->user()->email}}</p></div>
+                        <div class="w-[320px] border border-[#342d2d] rounded-full p-2"><p>contact : {{auth()->user()->no_telp}}</p></div>
+                    </div>
+
+
+                    <div class="mt-[40px]">
+                        <form action="/pengaturan/upload" method="post" enctype="multipart/form-data" class="profileIm">
+                            @csrf
+                            @method('PUT')
+                            <div class="flex gap-4">
+                                <label for="foto">
+                                    <p class="bg-[#47578b] w-[150px] text-white text-center  p-2 rounded-full">Choose</p>
+                                </label>
+                                <input type="file" name="foto" id="foto" hidden>
+                                <button type="submit" class="bg-[#47578b] w-[150px] p-2 rounded-full text-white">Upload</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 

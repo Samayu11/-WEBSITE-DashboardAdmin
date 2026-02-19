@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded',function (){
   const ctx = document.getElementById('myChart');
   let cMurid = Number(document.getElementById('cMurid').innerText); 
   let muridJelek = cMurid / 2.3;
@@ -22,3 +23,5 @@
       }
     }
   });
+
+})
